@@ -8,3 +8,16 @@ These act as a safety net if something goes wrong in the try block:
 **FileNotFoundError:** If the file sample.txt isn't in the folder, the program won't crash. Instead, it catches this specific error and prints a friendly message: "Error: The file sample.txt does not exist.
 **"Exception as e:** This is a "catch-all" for any other problems (like the file being corrupted or a lack of system permissions). it captures the error message and prints it so you know exactly what went wrong.
 **for task 2(2.py)**
+with open("output.txt", "w") as file:
+    file.write(data + "\n")
+The script takes your first input and opens output.txt in write mode ('w').
+ If the file already exists, write mode overwrites everything in it. If it doesn't exist, it creates a new one.
+ It saves your text and adds a newline (\n) so the next entry starts on a fresh line.
+ with open("output.txt", "a") as file:
+    file.write(additional_data + "\n")
+The script takes your second input and opens the same file in append mode ('a').
+Unlike write mode, this adds the new data to the end of the existing content without deleting what is already there.
+with open("output.txt", "r") as file:
+    print(file.read())
+Finally, it opens the file in read mode ('r').
+It reads the entire content of the file and prints it to your console so you can see the final result of both inputs combined.
